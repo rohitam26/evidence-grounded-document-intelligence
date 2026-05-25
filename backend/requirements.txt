@@ -1,0 +1,34 @@
+# Evidence-Grounded Document Intelligence Production Requirements
+Flask==3.1.3
+flask-cors==6.0.5
+pydantic==2.14.1
+pydantic-settings==2.16.3
+SQLAlchemy==2.1.5
+alembic==1.20.1
+psycopg[binary]==3.3.6
+PyJWT==2.15.1
+bcrypt==5.0.0
+cryptography==50.0.2
+
+# Document Parsing & OCR
+pymupdf==2.1.0
+python-docx==1.2.0
+pillow==13.0.0
+
+# Retrieval & Vector Store
+qdrant-client==1.20.0
+rank-bm25==0.2.2
+numpy==2.5.5
+scikit-learn==1.9.1
+
+# Observability & MCP
+opentelemetry-api==1.45.2
+opentelemetry-sdk==1.45.2
+mcp==2.3.0
+httpx==0.28.1
+requests==2.34.2
+
+# Testing & Quality
+pytest==9.1.1
+pytest-asyncio==1.5.0
+pytest-cov==7.1.0
