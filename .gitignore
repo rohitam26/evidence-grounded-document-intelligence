@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment & Credentials
+.env
+*.pem
+*.key
+*.cert
+
+# Databases & Vector Storage
+data/papertrail.db
+data/qdrant_storage/
+data/uploads/*
+!data/uploads/.gitkeep
+data/sample_documents/*
+!data/sample_documents/acme_service_agreement.pdf
+!data/sample_documents/beta_master_agreement.pdf
+!data/sample_documents/acme_invoice_1042.pdf
+!data/sample_documents/gamma_contract_amendment.docx
+
+# Node & Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+.npm
+npm-debug.log*
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
