@@ -1,0 +1,1014 @@
+{
+  "total_test_cases": 52,
+  "answerable_cases": 42,
+  "unanswerable_cases": 10,
+  "metrics": {
+    "retrieval": {
+      "hit_rate_at_5": 98.08,
+      "mean_reciprocal_rank": 0.8763,
+      "recall_at_5": 98.08,
+      "precision_at_5": 68.46
+    },
+    "generation": {
+      "answer_correctness": 71.15,
+      "citation_precision": 100.0,
+      "citation_completeness": 94.23,
+      "abstention_accuracy": 98.08
+    },
+    "operations": {
+      "mean_retrieval_latency_ms": 3.94,
+      "mean_generation_latency_ms": 55.01,
+      "total_benchmark_duration_sec": 3.07
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "eval-001",
+      "question": "What are the payment terms under the Acme contract?",
+      "is_unanswerable": false,
+      "expected_answer": "Net 30 days from invoice issuance date",
+      "model_answer": "According to the document: SECTION 2: FEES AND PAYMENT TERMS\nClient shall compensate Provider at a fixed monthly subscription rate of $15,000.00. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 9.34,
+      "generation_latency_ms": 2614.39,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-002",
+      "question": "What is the monthly fixed subscription rate for Acme?",
+      "is_unanswerable": false,
+      "expected_answer": "$15,000.00",
+      "model_answer": "According to the document: SECTION 2: FEES AND PAYMENT TERMS\nClient shall compensate Provider at a fixed monthly subscription rate of $15,000.00. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.3,
+      "generation_latency_ms": 4.05,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-003",
+      "question": "What is the late payment finance charge under Acme Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "1.5% per month",
+      "model_answer": "According to the document: Late payments shall incur a monthly finance\ncharge of 1.5% or the maximum permitted by law. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.44,
+      "generation_latency_ms": 3.92,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-004",
+      "question": "What is the effective date of the Acme Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "January 10, 2026",
+      "model_answer": "According to the document: SECTION 4: TERM AND TERMINATION\nThis Agreement shall commence on the Effective Date and remain active for twelve (12) months. [Citation: 3]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 4.34,
+      "generation_latency_ms": 4.51,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-005",
+      "question": "Who is the Provider in the Acme Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "Beta Global Solutions",
+      "model_answer": "Based on verified records in the document: SECTION 2: FEES AND PAYMENT TERMS\nClient shall compensate Provider at a fixed monthly subscription rate of $15,000.00. All invoices are\npayable under Net 30 days from invoice issua... [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 4.56,
+      "generation_latency_ms": 3.4,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-006",
+      "question": "Who is the Client in the Acme Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "Acme Corporation",
+      "model_answer": "Based on verified records in the document: SECTION 2: FEES AND PAYMENT TERMS\nClient shall compensate Provider at a fixed monthly subscription rate of $15,000.00. All invoices are\npayable under Net 30 days from invoice issua... [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 5.37,
+      "generation_latency_ms": 4.99,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-007",
+      "question": "What services will Provider deliver to Acme?",
+      "is_unanswerable": false,
+      "expected_answer": "Cloud data analytics and automated document classification",
+      "model_answer": "According to the document: SECTION 1: SCOPE OF SERVICES\nProvider shall deliver cloud data analytics and automated document classification software as detailed\nin Exhibit A. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.12,
+      "generation_latency_ms": 3.29,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-008",
+      "question": "How long do confidentiality obligations survive under Acme contract?",
+      "is_unanswerable": false,
+      "expected_answer": "Three (3) years",
+      "model_answer": "According to the document: Confidentiality obligations survive termination for a period of three (3) years. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.78,
+      "generation_latency_ms": 3.71,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-009",
+      "question": "What is the initial duration or term of the Acme Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "12 months",
+      "model_answer": "According to the document: ARTICLE 4: TERMINATION PROTOCOL\nThe initial term of this Agreement is twenty-four (24) months. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 0.0,
+      "mrr": 0.0,
+      "retrieval_latency_ms": 3.43,
+      "generation_latency_ms": 4.7,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-010",
+      "question": "What is the notice period required for termination without cause in Acme contract?",
+      "is_unanswerable": false,
+      "expected_answer": "30 days prior written notice",
+      "model_answer": "According to the document: Either party may terminate this Agreement without cause by providing thirty (30) days prior written\nnotice. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p2",
+        "acme_service_agreement.pdf:p2",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.49,
+      "generation_latency_ms": 4.88,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-011",
+      "question": "Within how many days must Provider delete client data upon termination of Acme agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "45 days",
+      "model_answer": "According to the document: Upon termination, Provider shall deliver all deliverables and delete client data within forty-five\n(45) days. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p2",
+        "acme_service_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 4.58,
+      "generation_latency_ms": 14.12,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-012",
+      "question": "Which governing law applies to the Acme Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "State of Delaware",
+      "model_answer": "Based on verified records in the document: SECTION 5: GOVERNING LAW AND DISPUTE RESOLUTION\nThis Agreement shall be governed by and construed in accordance with the laws of the State of\nDelaware, excluding its conflict of la... [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p2",
+        "acme_service_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 4.5,
+      "generation_latency_ms": 3.41,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-013",
+      "question": "In which county will Acme disputes be settled?",
+      "is_unanswerable": false,
+      "expected_answer": "New Castle County, Delaware",
+      "model_answer": "According to the document: Any dispute shall be settled in New Castle County,\nDelaware. [Citation: 3]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_service_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.3333,
+      "retrieval_latency_ms": 2.79,
+      "generation_latency_ms": 5.07,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-014",
+      "question": "Who signed the Acme Agreement on behalf of Acme Corporation?",
+      "is_unanswerable": false,
+      "expected_answer": "John H. Smith, Chief Executive Officer",
+      "model_answer": "According to the document: This Master Services Agreement ('Agreement') is entered into as of January 10, 2026 ('Effective\nDate'), by and between Acme Corporation ('Client'), a Delaware corporation, and Beta Global\nSolutions ('Provider'), a California corporation. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.2,
+      "retrieval_latency_ms": 3.59,
+      "generation_latency_ms": 3.05,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-015",
+      "question": "What are the payment terms in the Beta Master Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "Net 60 days strictly from invoice date",
+      "model_answer": "According to the document: SECTION 2: FEES AND PAYMENT TERMS\nClient shall compensate Provider at a fixed monthly subscription rate of $15,000.00. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.2,
+      "retrieval_latency_ms": 2.73,
+      "generation_latency_ms": 2.85,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-016",
+      "question": "What is the total contract value of the Beta Vendor Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "$180,000.00",
+      "model_answer": "According to the document: This Vendor Services Master Agreement ('Agreement') is made effective as of February 1, 2026, by\nand between Beta Global Solutions ('Client') and Gamma Enterprises LLC ('Contractor'). [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.42,
+      "generation_latency_ms": 3.94,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-017",
+      "question": "How are payments tranches structured in the Beta agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "Quarterly tranches of $45,000.00",
+      "model_answer": "Based on verified records in the document: This Master Services Agreement ('Agreement') is entered into as of January 10, 2026 ('Effective\nDate'), by and between Acme Corporation ('Client'), a Delaware corporation, and Beta... [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.5,
+      "retrieval_latency_ms": 3.23,
+      "generation_latency_ms": 4.15,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-018",
+      "question": "Do late penalties or interest charges apply under the Beta Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "No interest charges or late penalties shall apply",
+      "model_answer": "According to the document: No interest charges or late penalties shall apply. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 6.49,
+      "generation_latency_ms": 6.48,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-019",
+      "question": "What is the effective date of the Beta Master Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "February 1, 2026",
+      "model_answer": "According to the document: This Master Services Agreement ('Agreement') is entered into as of January 10, 2026 ('Effective\nDate'), by and between Acme Corporation ('Client'), a Delaware corporation, and Beta Global\nSolutions ('Provider'), a California corporation. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.3333,
+      "retrieval_latency_ms": 2.53,
+      "generation_latency_ms": 3.0,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-020",
+      "question": "Who is the Contractor in the Beta Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "Gamma Enterprises LLC",
+      "model_answer": "According to the document: This Vendor Services Master Agreement ('Agreement') is made effective as of February 1, 2026, by\nand between Beta Global Solutions ('Client') and Gamma Enterprises LLC ('Contractor'). [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.78,
+      "generation_latency_ms": 2.83,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-021",
+      "question": "What services will Contractor deliver to Beta Global Solutions?",
+      "is_unanswerable": false,
+      "expected_answer": "Multi-lingual technical support, documentation auditing, and security patch verification",
+      "model_answer": "According to the document: ARTICLE 1: SERVICES DELIVERABLE\nContractor will provide multi-lingual technical support, documentation auditing, and security patch\nverification. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.29,
+      "generation_latency_ms": 3.5,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-022",
+      "question": "How many business days written request is required for compliance audit logs in Beta Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "10 business days",
+      "model_answer": "According to the document: ARTICLE 3: AUDIT RIGHTS\nClient retains the right to inspect Contractor compliance logs upon ten (10) business days written\nrequest. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.88,
+      "generation_latency_ms": 4.48,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-023",
+      "question": "What is the initial term duration of the Beta Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "24 months",
+      "model_answer": "According to the document: ARTICLE 4: TERMINATION PROTOCOL\nThe initial term of this Agreement is twenty-four (24) months. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.11,
+      "generation_latency_ms": 3.71,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-024",
+      "question": "What is the termination notice period for convenience in Beta agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "60 days advance written notice",
+      "model_answer": "According to the document: Either party may terminate for\nconvenience upon sixty (60) days advance written notice. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.56,
+      "generation_latency_ms": 5.04,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-025",
+      "question": "What is the cure period for material breach under the Beta Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "15 days",
+      "model_answer": "According to the document: Immediate termination is permitted solely in\ncases of material breach unremedied within fifteen (15) days. [Citation: 3]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.3333,
+      "retrieval_latency_ms": 3.5,
+      "generation_latency_ms": 6.65,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-026",
+      "question": "Which governing jurisdiction applies to the Beta Master Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "State of California",
+      "model_answer": "According to the document: ARTICLE 5: GOVERNING JURISDICTION\nThis Agreement is governed by the laws of the State of California. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.36,
+      "generation_latency_ms": 11.83,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-027",
+      "question": "Where must formal arbitration take place for Beta Agreement disputes?",
+      "is_unanswerable": false,
+      "expected_answer": "San Francisco, California",
+      "model_answer": "According to the document: Any formal arbitration or litigation\nshall take place exclusively in San Francisco, California. [Citation: 3]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.3333,
+      "retrieval_latency_ms": 2.83,
+      "generation_latency_ms": 4.36,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-028",
+      "question": "Who signed for Gamma Enterprises LLC in the Beta Agreement?",
+      "is_unanswerable": false,
+      "expected_answer": "David K. Reynolds, Managing Director",
+      "model_answer": "According to the document: This Vendor Services Master Agreement ('Agreement') is made effective as of February 1, 2026, by\nand between Beta Global Solutions ('Client') and Gamma Enterprises LLC ('Contractor'). [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 0.3333,
+      "retrieval_latency_ms": 4.36,
+      "generation_latency_ms": 3.21,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-029",
+      "question": "What is the invoice number on the Acme commercial invoice?",
+      "is_unanswerable": false,
+      "expected_answer": "ACME-2026-1042",
+      "model_answer": "According to the document: COMMERCIAL INVOICE [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.73,
+      "generation_latency_ms": 3.76,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-030",
+      "question": "What is the invoice issuance date for invoice 1042?",
+      "is_unanswerable": false,
+      "expected_answer": "January 15, 2026",
+      "model_answer": "According to the document: Invoice Number: ACME-2026-1042\nInvoice Date: January 15, 2026\nPayment Due Date: February 14, 2026\nPayment Terms: Net 30 days [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 5.86,
+      "generation_latency_ms": 5.31,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-031",
+      "question": "When is the payment due date for invoice ACME-2026-1042?",
+      "is_unanswerable": false,
+      "expected_answer": "February 14, 2026",
+      "model_answer": "According to the document: Invoice Number: ACME-2026-1042\nInvoice Date: January 15, 2026\nPayment Due Date: February 14, 2026\nPayment Terms: Net 30 days [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.76,
+      "generation_latency_ms": 4.2,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-032",
+      "question": "What is the total amount due on invoice 1042?",
+      "is_unanswerable": false,
+      "expected_answer": "$48,600.00",
+      "model_answer": "According to the document: Subtotal: $45,000.00\nApplicable State Tax (8%): $3,600.00\nTotal Amount Due: $48,600.00 [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 4.02,
+      "generation_latency_ms": 3.93,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-033",
+      "question": "What is the subtotal on invoice 1042 before taxes?",
+      "is_unanswerable": false,
+      "expected_answer": "$45,000.00",
+      "model_answer": "According to the document: Invoice Number: ACME-2026-1042\nInvoice Date: January 15, 2026\nPayment Due Date: February 14, 2026\nPayment Terms: Net 30 days [Citation: 3]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.9,
+      "generation_latency_ms": 3.45,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-034",
+      "question": "What is the applicable state tax amount on invoice 1042?",
+      "is_unanswerable": false,
+      "expected_answer": "$3,600.00",
+      "model_answer": "According to the document: Subtotal: $45,000.00\nApplicable State Tax (8%): $3,600.00\nTotal Amount Due: $48,600.00 [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.14,
+      "generation_latency_ms": 3.96,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-035",
+      "question": "What are the payment terms specified on invoice 1042?",
+      "is_unanswerable": false,
+      "expected_answer": "Net 30 days",
+      "model_answer": "According to the document: Invoice Number: ACME-2026-1042\nInvoice Date: January 15, 2026\nPayment Due Date: February 14, 2026\nPayment Terms: Net 30 days [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.31,
+      "generation_latency_ms": 3.18,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-036",
+      "question": "What routing number is specified for wire remittance on invoice 1042?",
+      "is_unanswerable": false,
+      "expected_answer": "#031100209",
+      "model_answer": "According to the document: Remittance: Wire transfer to Delaware Commercial Bank, Routing #031100209 [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.73,
+      "generation_latency_ms": 2.92,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-037",
+      "question": "What is the execution date of Amendment No. 1 to the Services Contract?",
+      "is_unanswerable": false,
+      "expected_answer": "March 1, 2026",
+      "model_answer": "Based on verified records in the document: AMENDMENT NO. 1 TO SERVICES CONTRACT... [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.26,
+      "generation_latency_ms": 3.19,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-038",
+      "question": "How does the contract term renew under Amendment No. 1?",
+      "is_unanswerable": false,
+      "expected_answer": "Automatically renews for consecutive 12-month periods",
+      "model_answer": "According to the document: The contract term shall automatically renew for additional consecutive 12-month periods unless either party provides written notice of non-renewal at least ninety (90) days prior to the expiration date. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.62,
+      "generation_latency_ms": 3.49,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-039",
+      "question": "What notice period is required for non-renewal under Amendment No. 1?",
+      "is_unanswerable": false,
+      "expected_answer": "90 days prior to expiration",
+      "model_answer": "According to the document: The contract term shall automatically renew for additional consecutive 12-month periods unless either party provides written notice of non-renewal at least ninety (90) days prior to the expiration date. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 7.37,
+      "generation_latency_ms": 3.32,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-040",
+      "question": "What is the guaranteed system uptime SLA under Amendment No. 1?",
+      "is_unanswerable": false,
+      "expected_answer": "99.9% uptime",
+      "model_answer": "According to the document: Provider guarantees 99.9% system uptime during normal operating business hours. [Citation: 5]",
+      "abstained": false,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.76,
+      "generation_latency_ms": 3.5,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-041",
+      "question": "What credit is Client entitled to if unplanned downtime exceeds 4 hours?",
+      "is_unanswerable": false,
+      "expected_answer": "10% credit against monthly fees",
+      "model_answer": "According to the document: Any unplanned downtime exceeding four (4) hours per calendar month shall entitle Client to a 10% credit against monthly fees. [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 4.31,
+      "generation_latency_ms": 5.23,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-042",
+      "question": "Which parties executed Amendment No. 1?",
+      "is_unanswerable": false,
+      "expected_answer": "Beta Global Solutions and Gamma Enterprises LLC",
+      "model_answer": "Based on verified records in the document: This Amendment No. 1 is executed on March 1, 2026, by and between Beta Global Solutions and Gamma Enterprises LLC.... [Citation: 1]",
+      "abstained": false,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.73,
+      "generation_latency_ms": 3.12,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-043",
+      "question": "What is the penalty for using quantum computing decryption in the Acme contract?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "acme_service_agreement.pdf:p2"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 4.31,
+      "generation_latency_ms": 4.17,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-044",
+      "question": "What is the personal home address of Sarah Jenkins in the Beta Agreement?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.24,
+      "generation_latency_ms": 2.12,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-045",
+      "question": "What are the secret extraterrestrial space mining rights mentioned in the invoice?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.46,
+      "generation_latency_ms": 4.58,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-046",
+      "question": "What is the discount rate for payments made in Bitcoin in the Acme agreement?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 5.46,
+      "generation_latency_ms": 4.98,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-047",
+      "question": "What is the annual software escrow deposit fee charged by Gamma Enterprises?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 2.66,
+      "generation_latency_ms": 3.77,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-048",
+      "question": "What are the carbon offset emissions credits agreed between Acme and Beta?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p1",
+        "acme_service_agreement.pdf:p2"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 7.33,
+      "generation_latency_ms": 3.48,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-049",
+      "question": "What is the interest penalty for early termination of the Gamma amendment?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "Based on verified records in the document: ARTICLE 4: TERMINATION PROTOCOL\nThe initial term of this Agreement is twenty-four (24) months. Either party may terminate for\nconvenience upon sixty (60) days advance written notic... [Citation: 3]",
+      "abstained": false,
+      "retrieved_pages": [
+        "gamma_contract_amendment.docx:p1",
+        "gamma_contract_amendment.docx:p1",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 1,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 8.24,
+      "generation_latency_ms": 8.68,
+      "status": "FAIL"
+    },
+    {
+      "id": "eval-050",
+      "question": "What is the company car allowance provided to John Smith in the Acme agreement?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2",
+        "acme_service_agreement.pdf:p2"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 6.75,
+      "generation_latency_ms": 8.84,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-051",
+      "question": "What is the London arbitration court address specified for Beta Global Solutions?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p2",
+        "beta_master_agreement.pdf:p1"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 3.27,
+      "generation_latency_ms": 16.85,
+      "status": "PASS"
+    },
+    {
+      "id": "eval-052",
+      "question": "What is the insurance policy deductible for drone delivery in the commercial invoice?",
+      "is_unanswerable": true,
+      "expected_answer": "ABSTAIN",
+      "model_answer": "ABSTAIN: The provided document evidence does not contain sufficient factual support to answer this inquiry.",
+      "abstained": true,
+      "retrieved_pages": [
+        "acme_invoice_1042.pdf:p1",
+        "acme_invoice_1042.pdf:p1",
+        "beta_master_agreement.pdf:p2"
+      ],
+      "citations_count": 0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "retrieval_latency_ms": 7.18,
+      "generation_latency_ms": 6.81,
+      "status": "PASS"
+    }
+  ]
+}
